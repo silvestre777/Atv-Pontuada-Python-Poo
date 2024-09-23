@@ -31,3 +31,7 @@ def test_pessoa_idade_negativa_retorna_mensagem_excecao(pessoa_valida):
     #Mensagem de erro
     with pytest.raises(ValueError, match="Idade nao pode ser negativa."):
         Pessoa("Silvestre",-1)
+def test_pessoa_idade_tipo_invalido_retorna_mensagem_excecao(pessoa_valida):
+    #Mensagem de erro
+    with pytest.raises(TypeError, match="A idade deve contar apenas números."):
+        Pessoa("Silvestre","23")
